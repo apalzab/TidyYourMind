@@ -71,7 +71,7 @@ import os.path
 # Additional locations of static files
 PROJECT_DIR = os.path.dirname(__file__) # this is not Django setting.
 TEMPLATE_DIRS = (
-    os.path.join(PROJECT_DIR, "/templates/"),
+    os.path.join(PROJECT_DIR, "templates"),
     # here you can add another templates directory if you wish.
 )
 
@@ -115,12 +115,12 @@ ROOT_URLCONF = 'tidyourmind.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'tidyourmind.wsgi.application'
 
-TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-    '/Users/aitor/Documents/code/heroku/staticfiles/templates',
-)
+# TEMPLATE_DIRS = (
+#     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+#     # Always use forward slashes, even on Windows.
+#     # Don't forget to use absolute paths, not relative paths.
+#     #'/Users/aitor/Documents/code/heroku/staticfiles/templates',
+# )
 
 INSTALLED_APPS = (
     'django.contrib.auth',

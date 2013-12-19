@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_head %}
+{% endblock %}
+
+{% block content %}
+
+        <section class="display-options">
+                <ul>
+                    <li><img src="{% static "img/multiple.png" %}"></li>
+                    <li><img src="{% static "img/center.png" %}"></li>
+                </ul>
+        </section>
+
+        <section class="create-note-wrapper">
+            <section class="create_note">
+                <form action="" method="">
+                {% csrf_token %}
+                    <button class="btn-save">Guardar</button>
+                    <ul>
+                        <li><input class="title" type="text" autofocus name="title" placeholder="Título..." autocomplete="off"></li>
+
+                        <li>
+                            <textarea class="content" rows="4" name="content" placeholder="Escribir nota..."></textarea>
+                            
+                        </li>
+                    </ul>
+                </form>
+            </section>
+        </section>
+
+        <section class="notes-wrapper">
+            <section class="notes">
+                {% for note in notes %}
+                    <section class="note" data-resource="/api/v1/notes/{{ note.id }}/" style="border-top-color:{{ note.color }}">
+                        <form action="" method="">
+                            <ul>
+                                <li><input class="title" focus type="text" name="title" placeholder="Título..." autocomplete="off" value="{{ note.title }}"></li>
+                                <li>
+                                    <textarea class="content" focus type="text" name="content" placeholder="Escribir nota..." rows="10" autocomplete="off">{{ note.content }}</textarea>
+                                </li>
+                            </ul>
+                            <div class="options">
+                                <ul>
+                                    <li>
+                                        <img class="trash" src="{% static "img/trash.png" %}">
+                                    </li>
+                                    <li>
+                                        <img id="brush" src="{% static "img/brush.png" %}">
+                                        <select class="colorpicker">
+                                              <option value="#ffffff">White</option>
+                                              <option value="#dc2127">Bold red</option>
+                                              <option value="#fbd75b">Yellow</option>
+                                              <option value="#7bd148">Green</option>
+                                        </select>
+                                    </li>
+                                    <li>
+                                        <button class="btn-save btn-update">Guardar</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </form>
+                    </section>
+                {% endfor %}
+        </section>
+
+        <script id="noteTemplate" type="text/x-jQuery-tmpl">
+        <section class="note" data-resource="${ resource_uri }" style="border-top-color:${ color }">
+            <form action="" method="">
+                <ul>
+                    <li><input class="title" focus type="text" name="title" placeholder="Título..." autocomplete="off" value="${ title }"></li>
+                    <li>
+                        <textarea class="content" focus type="text" name="content" placeholder="Escribir nota..." rows="10" autocomplete="off">${ content }</textarea>
+                    </li>
+                </ul>
+                <div class="options">
+                    <ul>
+                        <li>
+                            <img class="trash" src="{% static "img/trash.png" %}">
+                        </li>
+                        <li>
+                            <img id="brush" src="{% static "img/brush.png" %}">
+                            <select class="colorpicker">
+                                  <option value="#ffffff">White</option>
+                                  <option value="#dc2127">Bold red</option>
+                                  <option value="#fbd75b">Yellow</option>
+                                  <option value="#7bd148">Green</option>
+                            </select>
+                        </li>
+                        <li>
+                            <button class="btn-save btn-update">Guardar</button>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </section>
+    </script>
+
+{% endblock %}
