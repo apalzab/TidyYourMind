@@ -72,7 +72,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    #('assets', '/Users/aitor/Documents/code/heroku/static'),
+    ('staticfiles', '/Users/aitor/Documents/code/heroku/tidyourmind'),
 )
 
 # List of finder classes that know how to find static files in
@@ -112,7 +112,7 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    '/Users/aitor/Documents/code/heroku/static/templates',
+    '/Users/aitor/Documents/code/heroku/staticfiles/templates',
 )
 
 INSTALLED_APPS = (
@@ -180,14 +180,10 @@ ALLOWED_HOSTS = ['*']
 
 # Static asset configuration
 import os
-PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
-STATIC_ROOT = os.path.join(PROJECT_ROOT,'staticfiles/')
-# URL prefix for static files.
-# Example: "http://example.com/static/", "http://static.example.com/"
-STATIC_URL = '/static/'
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = 'staticfiles'
+STATIC_URL = '/staticfiles/'
 
-
-
-
-
-
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
