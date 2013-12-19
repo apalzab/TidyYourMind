@@ -1,1 +1,1 @@
-web: gunicorn tidyourmind.wsgi
+web: python manage.py collectstatic --noinput; gunicorn tidyourmind.wsgi
