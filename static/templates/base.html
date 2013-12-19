@@ -1,0 +1,54 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Notes {% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static "assets/css/ericMeyer.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "assets/css/base.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "assets/js/simple/jquery.simplecolorpicker.css" %}">
+    <!--CSS requirements-->
+    <link rel="stylesheet" type="text/css" href="{% static "assets/css/notes.css" %}">
+    {% block extra_head %}
+    {% endblock %}
+</head>
+<body>
+
+{% block body %}
+    <div class="page-wrap">
+        <nav class="nav-bar">
+            <ul>
+                <li class="nav-bar-left"><a href="">Tidy Your mind</a></li>
+                {% if user.is_authenticated %}
+                <li class="nav-bar-right"><a href="/accounts/logout">Logout</a></li>
+            {% endif %}
+            </ul>
+        </nav>
+
+    {% block content %}
+    {% endblock %}
+
+    </div> <!--page-wrap-->
+
+    <footer>
+        <section>
+            <ul>
+                <li>Tidy Your Mind 2013</li>
+                <li></li>
+                <li></li>
+            </ul>
+        </section>
+    </footer>
+{% endblock %}
+
+{% block extra_scripts %}
+{% endblock %}
+
+<!--JQuery dependencies-->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="{% static "assets/js/simple/jquery.simplecolorpicker.js" %}"></script>
+<script src="{% static "assets/js/jquery.tmpl.js" %}"></script>
+<script src="{% static "assets/js/notes.js" %}"></script>
+
+</body>
+</html>

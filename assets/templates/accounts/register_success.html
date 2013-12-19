@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_head %}
+    <!--CSS requirements-->
+    <link rel="stylesheet" type="text/css" href="{% static "assets/css/notes.css" %}">
+{% endblock %}
+
+{% block content %}
+
+    <section class="init">
+      <header>
+        <h1>Tidy Your Mind</h1>
+        <p>never forget anything</p>
+      </header>
+      <article class="register_success">
+        <p>Please, check your email in order to confirm your account.</p>
+      </article>
+    </section>
+
+{% endblock %}

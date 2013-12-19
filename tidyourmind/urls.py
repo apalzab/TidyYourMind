@@ -10,7 +10,7 @@ urlpatterns = patterns('tidyourmind.views',
     # url(r'^tidyourmind/', include('tidyourmind.foo.urls')),
 
     url(r'^testing/', include('testing.urls')),
-
+    url(r'^accounts/', include('accounts.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
