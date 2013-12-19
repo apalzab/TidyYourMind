@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from api import NoteResource
+from tidyourmind.api import NoteResource
 
 note_resource = NoteResource()
 
