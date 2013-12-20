@@ -11,11 +11,12 @@ v1_api.register(NoteResource())
 # from django.contrib import admin
 # admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = patterns('tidyourmind.views',
     # Examples:
-     url(r'^notes/', include('notes.urls')),
-     url(r'^accounts/', include('accounts.urls')),
-     url(r'api/', include(v1_api.urls)),
+    url(r'^$', 'index', name='index'),
+    url(r'^notes/', include('notes.urls')),
+    url(r'^accounts/', include('accounts.urls')),
+    url(r'api/', include(v1_api.urls)),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
