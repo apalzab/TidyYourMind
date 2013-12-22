@@ -37,6 +37,7 @@
 .create_note .title {
     /*display: none;*/
     font-weight: bold;
+    color: #666666;
 }
 
 .create_note .content {
@@ -45,6 +46,7 @@
     padding-top: 2em;
     font-size: 1.2em;
     line-height: 1.7em;
+    color: #666666;
 }
 
 .create_note .content:focus {
@@ -281,4 +283,51 @@ box-shadow: 0 0 6px #f8b9b7;
     margin: 0 auto;
     border-top: 3px solid;
     border-top-color: rgb(220, 33, 39);
+}
+
+/*________________________________________
+
+MEDIA QUERIES
+________________________________________*/
+
+@media (max-width: 1024px) {
+
+.display-options {
+    display: none;
+}
+
+.create-note-wrapper {
+    width: 100%;
+    border: 0;
+    padding: 0;
+}
+
+.create-note-wrapper .create_note {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.notes-wrapper {
+    width: 100%;
+}
+
+.notes-wrapper .notes {
+    width: 100%;
+}
+
+.note {
+    width: 70%;
+    float: none;
+    margin: 0 auto;
+    margin-bottom: 2em;
+}
+
+.init .login {
+    width: 100%;
+}
+
+.init .sign-in {
+    width: 100%;
+    margin-top: 2em;
+}
 }
