@@ -315,10 +315,6 @@ ________________________________________*/
     margin: 0 auto;
 }
 
-}
-
-@media (max-width: 550px) {
-
 .display-options {
     display: none;
 }
@@ -348,6 +344,12 @@ ________________________________________*/
     margin: 0 auto;
     margin-bottom: 2em;
 }
+
+}
+
+@media (max-width: 550px) {
+
+
 
 .init {
     width: 90%;
