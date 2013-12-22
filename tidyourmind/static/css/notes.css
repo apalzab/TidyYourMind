@@ -290,7 +290,13 @@ box-shadow: 0 0 6px #f8b9b7;
 MEDIA QUERIES
 ________________________________________*/
 
+
 @media (max-width: 1024px) {
+    
+    
+}
+
+@media (max-width: 550px) {
 
 .display-options {
     display: none;
@@ -322,12 +328,23 @@ ________________________________________*/
     margin-bottom: 2em;
 }
 
+.init {
+    width: 90%;
+}
+
+.init header {
+    padding-bottom: 1em;
+}
+
 .init .login {
     width: 100%;
+    float: none;
 }
 
 .init .sign-in {
     width: 100%;
     margin-top: 2em;
+    float: none;
+    margin-bottom: 2em;
 }
 }
