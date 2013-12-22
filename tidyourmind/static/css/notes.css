@@ -292,8 +292,29 @@ ________________________________________*/
 
 
 @media (max-width: 1024px) {
-    
-    
+.init {
+    width: 90%;
+}
+
+.init header {
+    padding-bottom: 1em;
+}
+
+.init .login {
+    width: 60%;
+    float: none;
+    margin: 0 auto;
+    margin-bottom: 2em;
+}
+
+.init .sign-in {
+    width: 60%;
+    margin-top: 2em;
+    float: none;
+    margin-bottom: 2em;
+    margin: 0 auto;
+}
+
 }
 
 @media (max-width: 550px) {
