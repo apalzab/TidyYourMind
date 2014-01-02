@@ -31,7 +31,14 @@ $(document).ready(function() {
                 console.log('we are in create note');
         }
         else {
-            createNote($('.create_note form'));
+            console.log($('.create_note form'));
+            var note = {
+                title: $('.create_note form').find('.title').val().toString(),
+                content: $('.create_note form').find('.content').val().toString(),
+                color: 'none',
+         };
+         console.log(note);
+            createNote(note);
             console.log('we are not in create note');
         }
 
@@ -47,10 +54,10 @@ $(document).ready(function() {
         return false;
     });
 
-    $('.notes').delegate('.note form', 'submit', function() {
-        console.log('updating note....');
-        return false;
-    });
+    // $('.notes').delegate('.note form', 'submit', function() {
+    //     console.log('updating note....');
+    //     return false;
+    // });
 
     $('.notes-wrapper .notes').delegate('.note', 'mouseenter', function() {
         $(this).find('.options').show({duration:200});
@@ -76,6 +83,7 @@ $(document).ready(function() {
                 color: $( this ).closest('.note').css('border-top-color').toString(),
          };
         updateNote($( this ).closest('.note').data('resource'), note);
+        return false;
     });
 
     $('.notes').delegate('#brush', 'click', function() {
@@ -93,6 +101,8 @@ $(document).ready(function() {
 
 
     function createNote(note) {
+         console.log("in create note");
+         console.log("title:" + $('.create_note form').find('.title').val());
          if ($('.create_note form').find('.title').val() != "" || $('.create_note form').find('.content').val() != "")
              $.ajax({
                     url: '/api/v1/notes/',

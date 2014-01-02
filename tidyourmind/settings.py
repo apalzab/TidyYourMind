@@ -1,6 +1,6 @@
 # Django settings for tidyourmind project.
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -176,7 +176,7 @@ LOGGING = {
     }
 }
 
-# Parse database configuration from $DATABASE_URL
+# # Parse database configuration from $DATABASE_URL
 import dj_database_url
 DATABASES['default'] =  dj_database_url.config()
 
