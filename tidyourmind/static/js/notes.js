@@ -24,7 +24,9 @@ $(document).ready(function() {
 
 
     $('.page-wrap').on('keydown click', function() {
+        console.log("keydown pressed");
         var elementClass = $(':focus').closest('section').attr('class');
+        console.log('this is the closest class' + elementClass);
         if (elementClass !== undefined) {
             elementClass.toString();
             if (elementClass == 'create_note')
